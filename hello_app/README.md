@@ -1,6 +1,6 @@
 # Hello App
 
-![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![RSpec](https://img.shields.io/badge/Tests-RSpec-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
+![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![MiniTest](https://img.shields.io/badge/Tests-MiniTest-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ As part of the [Ruby On Rails 7 Tutorial](https://github.com/Boutquin/Ruby-On-Ra
 - **Basic Authentication:** Simple user registration and login functionality.
 - **Hello World Page:** Displays a personalized greeting message.
 - **Responsive Design:** Ensures the application is accessible on various devices.
-- **RSpec Testing:** Implements a test suite to ensure application reliability.
+- **Testing:** MiniTest framework for writing and executing tests.
 - **Continuous Integration:** Utilizes GitHub Actions for automated testing and deployment.
 - **Docker Support:** Facilitates containerized development and deployment environments.
 - **YARD Documentation:** Provides comprehensive documentation for developers.
@@ -113,17 +113,17 @@ Once the application is running, you can:
 
 ## Running the Tests
 
-Ensuring the reliability and stability of the application is paramount. This project leverages **RSpec**, a powerful testing framework for Ruby, to provide a comprehensive test suite covering various aspects of the application. Below are detailed instructions and best practices for running and managing tests within this project.
+Ensuring the reliability and stability of the application is paramount. This project leverages **MiniTest**, the default testing framework for Ruby on Rails, to provide a comprehensive test suite covering various aspects of the application. Below are detailed instructions and best practices for running and managing tests within this project.
 
 ### Running the Test Suite
 
 To execute the entire test suite, use the following command:
 
 ```bash
-bundle exec rspec
+rails test
 ```
 
-This command runs all tests located in the `spec/` directory, providing a summary of the results, including the number of tests passed, failed, and any pending.
+This command runs all tests located in the `test/` directory, providing a summary of the results, including the number of tests passed, failed, and any pending.
 
 ## Deployment
 
