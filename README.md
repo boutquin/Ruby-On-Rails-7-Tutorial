@@ -1,6 +1,6 @@
 # Ruby On Rails 7 Tutorial
 
-![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![RSpec](https://img.shields.io/badge/Tests-RSpec-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
+![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![MiniTest](https://img.shields.io/badge/Tests-MiniTest-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@
 - **CRUD Operations:** Full create, read, update, and delete functionality for various resources.
 - **Responsive Design:** Mobile-friendly interfaces utilizing modern CSS frameworks.
 - **Docker Support:** Containerization for consistent development and deployment environments.
-- **RSpec Testing:** Comprehensive test suite ensuring application reliability and maintainability.
+- **Testing:** MiniTest framework for writing and executing tests.
 - **Continuous Integration:** Automated testing and deployment workflows using GitHub Actions.
 - **Heroku Deployment:** Seamless deployment pipeline to Heroku for production environments.
 - **YARD Documentation:** Detailed documentation generated with YARD for ease of development.
@@ -112,17 +112,17 @@ Once the application is running, you can:
 
 ## Running the Tests
 
-Ensuring the reliability and stability of the application is paramount. This project leverages **RSpec**, a powerful testing framework for Ruby, to provide a comprehensive test suite covering various aspects of the application. Below are detailed instructions and best practices for running and managing tests within this project.
+Ensuring the reliability and stability of the application is paramount. This project leverages **MiniTest**, the default testing framework for Ruby on Rails, to provide a comprehensive test suite covering various aspects of the application. Below are detailed instructions and best practices for running and managing tests within this project.
 
 ### Running the Test Suite
 
 To execute the entire test suite, use the following command:
 
 ```bash
-bundle exec rspec
+rails test
 ```
 
-This command runs all tests located in the `spec/` directory, providing a summary of the results, including the number of tests passed, failed, and any pending.
+This command runs all tests located in the `test/` directory, providing a summary of the results, including the number of tests passed, failed, and any pending.
 
 ## Deployment
 
@@ -170,7 +170,7 @@ Continuous Integration and Continuous Deployment are managed using GitHub Action
 
 - **Environment Setup:** Configures Ruby and installs dependencies.
 - **Database Setup:** Prepares the SQLite and PostgreSQL databases.
-- **Running Tests:** Executes the RSpec test suite to ensure code integrity.
+- **Running Tests:** Executes the MiniTest test suite to ensure code integrity.
 - **Deployment:** Automatically deploys to Heroku upon successful tests (if configured).
 
 You can view the status of the CI pipeline via the badges included in the README and the Actions tab of the repository.
