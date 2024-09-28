@@ -1,6 +1,6 @@
 # Ruby On Rails 7 Tutorial
 
-![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![RSpec](https://img.shields.io/badge/Tests-RSpec-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![GitHub Workflow Status](https://github.com/Boutquin/Ruby-On-Rails-7-Tutorial/actions/workflows/ci.yml/badge.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
+![Ruby](https://img.shields.io/badge/Ruby-3.3.5-red.svg) ![Rails](https://img.shields.io/badge/Rails-7.2.1-red.svg) ![RSpec](https://img.shields.io/badge/Tests-RSpec-brightgreen.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Docker](https://img.shields.io/badge/Docker-supported-blue.svg) ![Documentation](https://img.shields.io/badge/Documentation-YARD-blue.svg)
 
 ## Table of Contents
 
@@ -229,8 +229,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- **Michael Hartl:** Special thanks to Michael Hartl for his excellent [Ruby on Rails Tutorial](https://www.railstutorial.org), which provided the foundation for this project.
+- **Michael Hartl:** Special thanks to Michael Hartl for his excellent [Ruby on Rails 7 Tutorial](https://www.railstutorial.org), which provided the foundation for this project.
 
 ---
 
-Developed by **Pierre G. Boutquin** while working through the Rails Tutorial by Michael Hartl.
+Developed by **Pierre G. Boutquin** while working through the [Ruby on Rails 7 Tutorial](https://www.railstutorial.org) by [Michael Hartl](https://www.michaelhartl.com/).
