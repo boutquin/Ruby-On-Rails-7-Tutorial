@@ -1,94 +1,52 @@
-# The routes for the Rails application are defined in this file. 
-# Rails uses a Domain-Specific Language (DSL) to map incoming requests to controller actions.
-# This file is central to how HTTP requests are routed to the appropriate parts of the application.
+# The routes configuration for the Rails application.
+# This file defines how HTTP requests are mapped to controller actions using Rails' routing system. 
+# Routes define how URLs should behave and which controller methods they should invoke. 
+# It is crucial to correctly define routes to ensure that users, clients, and services can interact with 
+# the web application correctly.
 #
-# Each route is tied to a specific URL pattern and a corresponding controller action that will handle that request.
-# Routes define how various parts of the application are accessed via different HTTP methods like GET, POST, PATCH, and DELETE.
+# This particular configuration sets up routes for a Progressive Web App (PWA), a health check route for 
+# uptime monitoring, and a root route that displays a basic "hello, world!" response.
 #
-# @note Routes are configured using the Rails routing DSL, which provides powerful mechanisms for mapping URLs to controller actions.
-# 
-# @see https://guides.rubyonrails.org/routing.html Rails Routing Guide for more information.
+# @see https://guides.rubyonrails.org/routing.html Rails Routing Guide for more information on routing in Rails.
 Rails.application.routes.draw do
-  
-  # Defines the health check endpoint for the application.
-  # This route maps the `/up` path to the `show` action in the `Rails::HealthController`.
-  # 
-  # @note This is a common convention in web applications to expose a lightweight endpoint that can be 
-  # used to verify the operational status of the application. Uptime monitoring services and load balancers 
-  # frequently use such endpoints to determine whether the application is healthy and capable of serving requests.
+
+  # Health check route for monitoring the application's uptime.
   #
-  # The health check performs the following:
-  # - Returns a **200 OK** status code if the application is running without issues.
-  # - Returns a **500 Internal Server Error** status code if there are issues during application boot.
+  # This route maps the `/up` URL to the `show` action in the `Rails::HealthController`. 
+  # The health check is essential for verifying that the application is running properly. It typically returns a 
+  # 200 OK status if the app is healthy and a 500 Internal Server Error if there are issues during boot.
   #
-  # @see https://guides.rubyonrails.org/routing.html#static-pages For more information on static routes.
+  # This route is commonly used by uptime monitoring services or load balancers to determine if the application 
+  # is alive and responding to requests. By checking this endpoint, external systems can monitor the app's availability.
   #
-  # @example Defining a health check route:
-  #   get "up" => "rails/health#show", as: :rails_health_check
-  #
-  # This maps the `/up` URL to the `Rails::HealthController#show` action, which checks the application’s health.
-  # The route is named `rails_health_check`, so it can be referenced throughout the application, such as in views or controllers.
+  # @example Health Check Endpoint
+  #   GET /up
+  #   Response:
+  #   - Status: 200 OK if the app is healthy
+  #   - Status: 500 Internal Server Error if there is an issue
   #
   # @return [void]
+  #   This route does not return a value but triggers the health check action to respond with the status.
   # @route GET /up
   get "up" => "rails/health#show", as: :rails_health_check
-  
-  # Defines the route to render the service worker for a Progressive Web Application (PWA).
-  # This route maps the `/service-worker` path to the `service_worker` action in the `Rails::PWAController`.
-  #
-  # @note Progressive Web Apps (PWA) use service workers to handle background tasks, 
-  # such as caching and handling network requests, to create a more reliable and offline-first experience.
-  #
-  # This route enables the service worker file to be dynamically rendered, which allows for more flexibility 
-  # in how the service worker is configured and managed.
-  #
-  # @see https://web.dev/service-workers/ Service Workers: an Introduction
-  #
-  # @example Defining a PWA service worker route:
-  #   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  #
-  # This maps the `/service-worker` URL to the `Rails::PWAController#service_worker` action, which is responsible 
-  # for serving the service worker file used by the browser.
-  #
-  # @return [void]
-  # @route GET /service-worker
-  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  
-  # Defines the route to serve the PWA manifest file.
-  # This route maps the `/manifest` path to the `manifest` action in the `Rails::PWAController`.
-  #
-  # @note The manifest is a key part of a PWA, as it provides metadata such as the application’s name, 
-  # icons, and theme colors. This file helps the browser display the web app like a native app 
-  # when added to the home screen.
-  #
-  # @see https://web.dev/add-manifest/ Adding a Web App Manifest
-  #
-  # @example Defining a PWA manifest route:
-  #   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  #
-  # This maps the `/manifest` URL to the `Rails::PWAController#manifest` action, which is responsible 
-  # for dynamically rendering the web app's manifest file.
-  #
-  # @return [void]
-  # @route GET /manifest
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root route of the application.
-  # This route maps the root URL (`/`) of the application to the `hello` action in the `ApplicationController`.
+  # Root path route, which defines the default homepage of the application.
   #
-  # @note The root route is the default route that users land on when they visit the base URL of the application (e.g., https://your-app.com/).
-  # It typically renders the homepage or a key page that users first interact with.
+  # The root route specifies the URL path that users will land on when they visit the base URL of the application 
+  # (e.g., https://your-app.com/). In this case, the root route is mapped to the `hello` action in the `ApplicationController`.
   #
-  # In this example, the root route renders the "hello, world!" message defined in the `ApplicationController#hello` action.
+  # The `hello` action is a simple controller action that renders an HTML response saying "hello, world!". This is typically 
+  # used as a placeholder or minimal demonstration for the homepage of the app. In production applications, the root path
+  # usually points to a more complex home page or dashboard.
   #
-  # @see https://guides.rubyonrails.org/routing.html#the-root-route For more information on root routes.
+  # @example Root Path Endpoint
+  #   GET /
+  #   Response:
+  #   - HTML content: "hello, world!"
   #
-  # @example Defining the root route:
-  #   root "application#hello"
-  #
-  # This maps the root URL (`/`) to the `ApplicationController#hello` action, which renders the homepage.
-  #
+  # @note This route maps the root URL `/` to the `hello` action in the `ApplicationController`.
   # @return [void]
+  #   This route does not return a value but renders the HTML response defined in the `ApplicationController#hello`.
   # @route GET /
   root "application#hello"
 
